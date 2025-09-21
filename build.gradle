@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Dependencias para Selenium y WebDriverManager
+    // Biblioteca principal de Selenium. Proporciona las herramientas para controlar un navegador web.
+    implementation("org.seleniumhq.selenium:selenium-java:4.17.0")
+
+    // Gestiona automáticamente los drivers del navegador (ej. chromedriver), evitando la configuración manual.
+    implementation("io.github.bonigarcia:webdrivermanager:5.6.3")
+
+    // Núcleo de Cucumber. Permite "pegar" los pasos de Gherkin (.feature) con el código Java que los ejecuta.
+    testImplementation("io.cucumber:cucumber-java:7.14.1")
+
+    // Permite ejecutar las pruebas de Cucumber utilizando el corredor de pruebas de JUnit.
+    testImplementation("io.cucumber:cucumber-junit:7.14.1")
+
+    // Framework de pruebas (similar a JUnit) que se usará para ejecutar los tests y gestionar aserciones.
+    testImplementation("org.testng:testng:7.8.0")
+
+    // Esta dependencia soluciona la advertencia de SLF4J
+    // Implementación de logging simple. Se añade para evitar la advertencia "SLF4J: Failed to load class..." en la consola.
+    implementation("org.slf4j:slf4j-simple:2.0.7")
+}
+
+test {
+    useJUnitPlatform()
+}
