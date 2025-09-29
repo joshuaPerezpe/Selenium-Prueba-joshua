@@ -1,8 +1,4 @@
-package pages;
-
-import org.openqa.selenium.By;
-
-import java.util.List;
+package pages.amazon;
 
 public class AmazonPageSearch extends BasePage{
 
@@ -14,16 +10,17 @@ public class AmazonPageSearch extends BasePage{
     private String addToCartButton = "//input[@id='add-to-cart-button']";
 
     public AmazonPageSearch(){
-        super(driver);
+        super(driver); // se usa el super devido a que estoy extendiendo la interfaz de BasePage
+    }
+
+
+    public void navigateToAmazon(){
+        navigateTo("https://www.amazon.com");
+
     }
 
     public void clickOnContinueShoppingButton(){
         clickElement(continueShoppingButton);
-
-    }
-
-    public void navigateToAmazon(){
-        navigateTo("https://www.amazon.com");
 
     }
 

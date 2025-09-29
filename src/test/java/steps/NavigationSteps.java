@@ -3,11 +3,11 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.AmazonPageSearch;
+import pages.amazon.AmazonPageSearch;
 
 public class NavigationSteps {
 
-    AmazonPageSearch amazon = new AmazonPageSearch();
+    AmazonPageSearch amazon = new AmazonPageSearch(); // Esto es una instancia. Que define el objeto real como tal.
 
     @Given("the user nagivates to www.amazon.com")
     public void navigateToAmazon() {
