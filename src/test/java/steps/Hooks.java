@@ -1,7 +1,7 @@
 package steps;
 
 import io.cucumber.java.AfterAll;
-import pages.amazon.BasePage;
+import pages.BasePage;
 
 public class Hooks {
 

@@ -1,4 +1,4 @@
-package pages.amazon;
+package pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -27,11 +27,13 @@ public class BasePage {
 
 
     public BasePage(WebDriver driver){
+
         BasePage.driver = driver;
     }
 
 
     public static void navigateTo(String url){
+
         driver.get(url);
     }
 
@@ -77,17 +79,24 @@ public class BasePage {
     }
 
     public void hoverOverElement(String locator){
+
         action.moveToElement(Find(locator));
     }
 
     public void doubleClick(String locator){
+
         action.doubleClick(Find(locator));
     }
 
     public void rightClick(String locator){
+
         action.contextClick(Find(locator));
     }
 
+    public String getValueFromTable(String locator, int row, int column){
+        String cellINeed = locator+"/table/tbody/tr["+row+"]/td["+column+"]";
 
+        return Find(cellINeed).getText();
+    }
 
 }

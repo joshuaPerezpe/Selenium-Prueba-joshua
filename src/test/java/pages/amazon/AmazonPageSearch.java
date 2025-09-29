@@ -1,6 +1,8 @@
 package pages.amazon;
 
-public class AmazonPageSearch extends BasePage{
+import pages.BasePage;
+
+public class AmazonPageSearch extends BasePage {
 
     private String continueShoppingButton = "//button[normalize-space()='Continue shopping']";
     private String searchBox = "//input[@id='twotabsearchtextbox']";
