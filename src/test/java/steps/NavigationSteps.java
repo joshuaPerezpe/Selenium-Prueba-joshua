@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.amazon.AmazonPageSearch;
 
 public class NavigationSteps {
@@ -18,6 +19,8 @@ public class NavigationSteps {
     public void clickOnContinueShoppingButton() {
         amazon.clickOnContinueShoppingButton();
     }
+
+
 
     @And("click on SearchBox")
         public void clickOnSearchBox(){
@@ -51,6 +54,12 @@ public class NavigationSteps {
     public void clickOnAddToCartButton(){
         amazon.clickOnAddToCartButton();
     }
+
+    @And("validate text")
+    public void validateResult(){
+        Assert.assertEquals(amazon.validateFirstResult(), "Envío GRATIS a Chile");
+    }
+
 
 
 

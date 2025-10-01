@@ -4,7 +4,8 @@ Feature: Test Amazon search product
   @cart
   Scenario Outline:
     Given the user nagivates to www.amazon.com
-    And click on Continue Shopping button
+    #And click on Continue Shopping button
+    And validate text
     And click on SearchBox
     And searches for <Product>
     And navigates to page number 2

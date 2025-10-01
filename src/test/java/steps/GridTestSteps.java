@@ -1,7 +1,9 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.GridPage;
 
 public class GridTestSteps {
@@ -21,5 +23,12 @@ public class GridTestSteps {
 
         System.out.println(value);
     }
+
+    @Then("I can validate the table is displayed")
+    public void validateResult(){
+        Assert.assertFalse("booom", grid.cellStatus());
+    }
+
+
 
 }

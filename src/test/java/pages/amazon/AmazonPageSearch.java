@@ -10,6 +10,7 @@ public class AmazonPageSearch extends BasePage {
     private String secondPageButton = "//a[@aria-label='Ir a la página 2']";
     private String searchResults = "//div[@data-component-type='s-search-result']"; // <-- Versión CORRECTA
     private String addToCartButton = "//input[@id='add-to-cart-button']";
+    private String firstResult = "//h2[normalize-space()='Envío GRATIS a Chile']";
 
     public AmazonPageSearch(){
         super(driver); // se usa el super devido a que estoy extendiendo la interfaz de BasePage
@@ -56,6 +57,10 @@ public class AmazonPageSearch extends BasePage {
 
     public void selectThirdResult() {
         selectNthElement(searchResults, 2);
+    }
+
+    public String validateFirstResult(){
+        return textFromElement(firstResult);
     }
 
 
